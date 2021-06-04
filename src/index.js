@@ -54,6 +54,7 @@ constructor(props) {
     history : [Array(9).fill(null),],
     xIsNext : true
   };
+  this.handleClick = this.handleClick.bind(this);
 }
 
 nextPlayer() {
@@ -110,7 +111,7 @@ render() {
 
         <Board 
           board={this.state.history[this.state.history.length - 1]} 
-          onClick={(i) => this.handleClick(i)}
+          onClick={this.handleClick}
           winningSquares={winner ? winner.winningSquares : null}/>
 
         <div className="game-info">
